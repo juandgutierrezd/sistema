@@ -15,7 +15,7 @@
                 </a>
 
                 @php
-                    [$message, $author] = str(Illuminate\Foundation\Inspiring::quotes()->random())->explode('-');
+                    [$message, $author] = ["Sistema de Alquiler","Juan Gutierrez"];
                 @endphp
 
                 <div class="relative z-20 mt-auto">
