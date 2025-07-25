@@ -47,7 +47,7 @@
                     <td class="flex ">
                         <flux:button variant="primary" color="teal" wire:click="show({{ $propiedad->id }})">Ver</flux:button>
                         <flux:button variant="primary" color="green" wire:click="edit({{ $propiedad->id }})">Editar</flux:button>
-                         <flux:button variant="primary" color="red" wire:click="delete({{ $propiedad->id }})">Eliminar</flux:button>
+                         <flux:button variant="primary" color="red" wire:click="confirmEliminar({{ $propiedad->id }})">Eliminar</flux:button>
                     </td>
                 </tr>
                 
@@ -210,6 +210,25 @@
         </div>
         @endif
        
+    </div>
+</flux:modal>
+
+<flux:modal name="delete-propiedad" class="min-w-[22rem]" wire:model="deleteModal">
+    <div class="space-y-6">
+        <div>
+            <flux:heading size="lg">Eliminar Propiedad?</flux:heading>
+            <flux:text class="mt-2">
+                <p></p>
+                <p></p>
+            </flux:text>
+        </div>
+        <div class="flex gap-2">
+            <flux:spacer/>
+            <flux:modal.close>
+                <flux:button variant="ghost">Cancelar</flux:button>
+            </flux:modal.close>
+            <flux:button type="submit" wire:click="delete" variant="danger">Eliminar</flux:button>
+        </div>
     </div>
 </flux:modal>
 

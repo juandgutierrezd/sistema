@@ -30,8 +30,10 @@ class Propieds extends Component
     public $createModal=false;
     public $showModal=false;
     public $editModal=false;
+    public $deleteModal=false;
     public $propiedadSeleccionada;
     public $propiedadEditando;
+    public $propiedadEliminar;
 
     //reglas de validacion
     protected $rules = [
@@ -112,7 +114,22 @@ class Propieds extends Component
     session()->flash('message',"Propiedad Actualizada");   
     }
   
+    public function confirmEliminar($id){
+        $this->propiedadEliminar = Propiedad::find($id);
+        $this->deleteModal=true;
+    }
 
+    public function delete(){
+        $elemento = Propiedad::find($this->propiedadEliminar->id);
+        $elemento->delete();
+        $this->deleteModal=false;
+        $this->propiedadEliminar = null;  
+
+        $propiedades = Propiedad::paginate((10));
+        if($propiedades->isEmpty() && $this->page > 1){
+            $this->previousPage();
+        }
+    }
     public function show($id){
         $this->propiedadSeleccionada = Propiedad::find($id);
         $this->showModal = true;
