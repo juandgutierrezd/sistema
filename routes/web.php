@@ -1,5 +1,6 @@
 <?php
 
+use App\Livewire\Inquilino;
 use App\Livewire\Propieds;
 use App\Models\Propiedad;
 use Illuminate\Support\Facades\Route;
@@ -21,6 +22,7 @@ Route::middleware(['auth'])->group(function () {
     Volt::route('settings/appearance', 'settings.appearance')->name('settings.appearance');
 });
 
-Route::get('/propiedades',Propieds::class)->name('propiedades');
+Route::get('/propiedades',Propieds::class)->name('propiedades')->middleware('auth');
+Route::get('/inquilinos',Inquilino::class)->name('inquilinos');
 
 require __DIR__.'/auth.php';
