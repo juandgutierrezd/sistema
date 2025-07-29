@@ -60,7 +60,7 @@
     </div>
 </div>
 
-<flux:modal name="create-propiedad" class="md:w-96" wire:model="createModal">
+    <flux:modal name="create-propiedad" class="md:w-96" wire:model="createModal">
     <div class="space-y-6">
         <div>
             <flux:heading size="lg">Creacion de Propiedad</flux:heading>
@@ -114,9 +114,9 @@
             </div>
         </form>
     </div>
-</flux:modal>
+    </flux:modal>
 
-<flux:modal name="editar-propiedad" class="md:w-96" wire:model="editModal">
+    <flux:modal name="editar-propiedad" class="md:w-96" wire:model="editModal">
     <div class="space-y-6">
         <div>
             <flux:heading size="lg">Editar Propiedad</flux:heading>
@@ -170,11 +170,11 @@
             </div>
         </form>
     </div>
-</flux:modal>
+    </flux:modal>
 
 
 
-<flux:modal name="show-propiedad" class="md:w-96" wire:model="showModal">
+    <flux:modal name="show-propiedad" class="md:w-96" wire:model="showModal">
     <div class="space-y-6">
         <div>
             <flux:heading size="lg">Detalles de la Propiedad</flux:heading>
@@ -211,9 +211,9 @@
         @endif
        
     </div>
-</flux:modal>
+    </flux:modal>
 
-<flux:modal name="delete-propiedad" class="min-w-[22rem]" wire:model="deleteModal">
+    <flux:modal name="delete-propiedad" class="min-w-[22rem]" wire:model="deleteModal">
     <div class="space-y-6">
         <div>
             <flux:heading size="lg">Eliminar Propiedad?</flux:heading>
@@ -230,6 +230,6 @@
             <flux:button type="submit" wire:click="delete" variant="danger">Eliminar</flux:button>
         </div>
     </div>
-</flux:modal>
+    </flux:modal>
 
 </div>
